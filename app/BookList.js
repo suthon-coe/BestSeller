@@ -5,6 +5,7 @@ import {
   View,
   ListView
 } from 'react-native';
+import BookItem from './BookItem'
 
 var ENDPOINT = "http://api.nytimes.com/svc/books/v3/lists/hardcover-fiction?response-format=json&api-key=73b19491b83909c7e07016f4bb4644f9:2:60667290";
 
@@ -30,7 +31,7 @@ export default class BookList extends Component {
   }
 
   _renderRow(data){
-      return <Text>{data.title}</Text>;
+      return <BookItem title={data.title}/>;
   }
 
   render() {
