@@ -31,7 +31,7 @@ export default class BookList extends Component {
   }
 
   _renderRow(data){
-      return <BookItem title={data.title}/>;
+      return <BookItem title={data.title} imageUri={data.book_image} author={data.author}/>;
   }
 
   render() {
