@@ -3,21 +3,29 @@ import {
   StyleSheet,
   Text,
   View,
-  Image
+  Image,
+  TouchableHighlight
 } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 export default class BookItem extends Component {
+  _showDetail = () => {
+      Actions.detail({data: this.props.data});
+  }
   render() {
+    var data = this.props.data;
     return (
+        <TouchableHighlight onPress={this._showDetail}>
         <View style={styles.container}>
             <View style={styles.thumbnail}>
-                <Image style={styles.image} source={{uri: this.props.imageUri}} resizeMode="contain"/>
+                <Image style={styles.image} source={{uri: data.book_image}} resizeMode="contain"/>
             </View>
             <View style={styles.info}>
-                <Text>{this.props.author}</Text>
-                <Text style={{fontWeight: 'bold'}}>{this.props.title}</Text>                
+                <Text>{data.author}</Text>
+                <Text style={{fontWeight: 'bold'}}>{data.title}</Text>                
             </View>
         </View>
+        </TouchableHighlight>
     );
   }
 }

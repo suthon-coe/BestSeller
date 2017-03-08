@@ -10,7 +10,7 @@ export default class BestSeller extends Component {
     return (
       <View style={styles.container}>
         <Text>
-          Welcome to React Native!
+          {this.props.data.title}
         </Text>
       </View>
     );

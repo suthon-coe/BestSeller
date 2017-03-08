@@ -3,8 +3,9 @@ import {
   StyleSheet,
   Text,
   View,
-  ListView
+  ListView,
 } from 'react-native';
+import _ from 'lodash'
 import BookItem from './BookItem'
 
 var ENDPOINT = "http://api.nytimes.com/svc/books/v3/lists/hardcover-fiction?response-format=json&api-key=73b19491b83909c7e07016f4bb4644f9:2:60667290";
@@ -31,9 +32,11 @@ export default class BookList extends Component {
   }
 
   _renderRow(data){
-      return (
-        <BookItem title={data.title} imageUri={data.book_image} author={data.author}/>
-      );
+      return <BookItem data={data}/>
+   }
+
+  _showDetail(){
+      console.log('hello world');
   }
 
   render() {
