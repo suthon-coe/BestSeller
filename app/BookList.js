@@ -31,7 +31,9 @@ export default class BookList extends Component {
   }
 
   _renderRow(data){
-      return <BookItem title={data.title} imageUri={data.book_image} author={data.author}/>;
+      return (
+        <BookItem title={data.title} imageUri={data.book_image} author={data.author}/>
+      );
   }
 
   render() {
@@ -49,5 +51,6 @@ const styles = StyleSheet.create({
     //justifyContent: 'center',
     //alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    top: 54,
   }
 });
